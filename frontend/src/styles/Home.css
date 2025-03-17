@@ -1,0 +1,27 @@
+.Container {
+  background: url("/public/homepage1.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgba(17, 24, 39, 1);
+}
+
+
+/* videomeet css */
+.Main-Content{
+  background-color:rgba(17, 24, 39, 1) ;
+  height: 100vh;
+}
+.Header h2{
+  text-align: center;
+  padding: 1rem 0 1rem 0  ;
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.Username-Text{
+  text-align: center;
+  align-self: center;
+  color: aliceblue;
+}
