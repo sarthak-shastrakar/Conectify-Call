@@ -11,6 +11,7 @@ import MicOffIcon from '@mui/icons-material/MicOff'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import StopScreenShareIcon from '@mui/icons-material/StopScreenShare'
 import ChatIcon from '@mui/icons-material/Chat'
+
 import server from '../environment';
 import "../styles/Home.css"
 
@@ -455,22 +456,19 @@ export default function VideoMeetComponent() {
                 <div>
 
                     <div className="Header">
-                    <h2>Enter into Lobby </h2>
+                    <h2>Enter Into Lobby </h2>
                     </div>
                     <div className="Username-Text">
 
-                    <TextField id="outlined-basic" style={{color:"white"}} label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined" />
+                    <TextField id="outlined-basic"  label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined" />
                     <Button variant="contained" onClick={connect}>Connect</Button>
                     </div>
 
-
-                    <div>
+                    <div className="Video-Camera-Preview">
                         <video ref={localVideoref} autoPlay muted></video>
                     </div>
 
                 </div> :
-
-
                 <div className={styles.meetVideoContainer}>
 
                     {showModal ? <div className={styles.chatRoom}>
@@ -495,7 +493,7 @@ export default function VideoMeetComponent() {
                             </div>
 
                             <div className={styles.chattingArea}>
-                                <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your chat" variant="outlined" />
+                                <TextField value={message} onChange={(e) => setMessage(e.target.value)} className="text-area" id="outlined-basic" label="Enter Your chat" variant="filled" />
                                 <Button variant='contained' onClick={sendMessage}>Send</Button>
                             </div>
 
@@ -534,7 +532,6 @@ export default function VideoMeetComponent() {
                         {videos.map((video) => (
                             <div key={video.socketId}>
                                 <video
-
                                     data-socket={video.socketId}
                                     ref={ref => {
                                         if (ref && video.stream) {
