@@ -74,6 +74,9 @@
     
 
 }
+.msg-sent p{
+    color: #3a39c4;
+}
 
 @media (max-width: 800px) {
     .chatRoom{

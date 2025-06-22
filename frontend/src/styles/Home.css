@@ -1,39 +1,169 @@
-.Container {
-  background: url("/public/homepage1.jpg");
-  width: 100vw;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: rgba(17, 24, 39, 1);
+/* Meet Container Layout */
+.meetContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  animation: fadeInUp 1s ease-out;
 }
 
-/* videomeet css */
-.Main-Content {
-  background-image: linear-gradient(135deg, #3B2667 10%, #BC78EC 100%);
-  height: 100vh;
-}
-.Header h2 {
-  text-align: center;
-  padding: 1rem 0 1rem 0;
-  color: aliceblue;
-  font-family: "Courier New", Courier, monospace;
-}
-
-.Username-Text {
-  text-align: center;
+/* Left Panel with Animated Card */
+.leftPanel {
+  flex: 1;
+  min-width: 300px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  animation: slideInLeft 1.2s ease-in-out;
+}
+
+.glassCard {
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  animation: zoomIn 1.4s ease;
+}
+
+.glassCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Panel */
+.rightPanel {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInRight 1.2s ease-in-out;
+}
+
+.rightPanel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
+.heroTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004d40;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: #555;
   margin-bottom: 2rem;
 }
-#outlined-basic {
-  color: white;
-}
-.Video-Camera-Preview{
-  text-align: center;
+
+/* Join Controls */
+.joinControls {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
 }
-.Video-Camera-Preview video{
-  border-radius: 40px;
-  width:fit-content;
+
+.joinControls > * {
+  flex: 1 1 200px;
+}
+
+.MuiTextField-root {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Button Hover */
+button.MuiButton-contained {
+  background-color: #00796b;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button.MuiButton-contained:hover {
+  background-color: #004d40;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .meetContainer {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .joinControls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .joinControls > * {
+    width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
