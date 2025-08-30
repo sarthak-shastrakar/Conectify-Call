@@ -541,7 +541,12 @@ export default function VideoMeetComponent() {
                       console.log(messages);
                       return (
                         <div style={{ marginBottom: "20px" }} key={index}>
-                          <p className="msg-sent" style={{ fontWeight: "bold" }} >{item.sender}</p>
+                          <p
+                            className="msg-sent"
+                            style={{ fontWeight: "bold" }}
+                          >
+                            {item.sender}
+                          </p>
                           <p>{item.data}</p>
                         </div>
                       );
@@ -622,6 +627,7 @@ export default function VideoMeetComponent() {
                   }}
                   autoPlay
                 ></video>
+                {/* <p className="Username">{username}</p> */}
               </div>
             ))}
           </div>
