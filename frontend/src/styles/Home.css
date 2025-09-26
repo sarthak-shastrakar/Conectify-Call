@@ -1,3 +1,4 @@
+
 /* Meet Container Layout */
 .meetContainer {
   display: flex;
@@ -7,6 +8,8 @@
   padding: 4rem 2rem;
   gap: 2rem;
   animation: fadeInUp 1s ease-out;
+  background-color: whitesmoke;
+  height:100vh;
 }
 
 /* Left Panel with Animated Card */
@@ -100,20 +103,16 @@ button.MuiButton-contained:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .meetContainer {
-    flex-direction: column;
-    padding: 2rem 1rem;
-  }
-
-  .joinControls {
-    flex-direction: column;
+  .Container{
+    display: flex;
     width: 100%;
+    height: 100%;
+    flex-direction: column;
   }
-
-  .joinControls > * {
-    width: 100%;
-  }
-
+.meetContainer{
+  margin: 0;
+  padding: 0;
+}
   .heroTitle {
     font-size: 1.6rem;
   }

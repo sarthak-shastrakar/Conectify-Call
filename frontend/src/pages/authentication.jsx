@@ -2,6 +2,8 @@ import * as React from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { Snackbar } from "@mui/material";
 import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
+// import { MoveLeft } from "lucide-react";
 
 const StyledWrapper = styled.div`
   .wrapper {
@@ -233,6 +235,12 @@ const StyledWrapper = styled.div`
       background-position: 0 5px;
     }
   }
+
+  .back-button {
+    text-align: center;
+    
+
+  }
 `;
 
 export default function Authentication() {
@@ -297,6 +305,12 @@ export default function Authentication() {
   return (
     <StyledWrapper>
       <div className="wrapper">
+        <Link to="/" className="back-button">
+          <span>
+            {/* <MoveLeft /> */}
+            back to home
+          </span>
+        </Link>
         <form className="form" onSubmit={(e) => e.preventDefault()}>
           <span className="title">
             {formState === 0 ? "Login" : "Register"}

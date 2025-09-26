@@ -5,20 +5,15 @@
   align-items: center;
   backdrop-filter: blur(15px) saturate(180%);
   -webkit-backdrop-filter: blur(15px) saturate(180%);
-  background: rgba(18, 18, 18, 0.6);
   border-bottom: 1px solid gray;
-  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   padding: 1rem 2rem;
   color: #f5f5f5;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-
-.navbar:hover {
-  background: rgba(30, 30, 30, 0.7);
-  box-shadow: 0 4px 20px rgba(0, 217, 245, 0.3);
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
 .navHeader h2 {
@@ -34,6 +29,7 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+  color: #555555;
 }
 
 .navlist p {
@@ -50,14 +46,14 @@
   position: absolute;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #00f5a0, #00d9f5);
+  background: linear-gradient(90deg, #008080);
   left: 0;
   bottom: -4px;
   transition: width 0.4s ease;
   border-radius: 2px;
 }
 .navlist p:hover {
-  color: #00d9f5;
+  color: black;
   transform: translateY(-2px);
 }
 .navlist p:hover::after {
@@ -68,13 +64,14 @@
   display: none;
   flex-direction: column;
   cursor: pointer;
+
   gap: 6px;
   transition: transform 0.3s ease;
 }
 .hamburger span {
   width: 28px;
   height: 3px;
-  background: #f5f5f5;
+  background: black;
   border-radius: 2px;
   transition: 0.4s ease;
 }
@@ -101,6 +98,8 @@
     background: rgba(25, 25, 25, 0.75);
     backdrop-filter: blur(20px);
     padding: 1.5rem;
+  color: white;
+
     gap: 1.5rem;
     width: 220px;
     border-radius: 12px 0 0 12px;
@@ -110,6 +109,10 @@
   .navlist.active {
     right: 0;
   }
+}
+
+.landingPageContainer {
+  background-color: white;
 }
 
 /* Main Container */
@@ -123,7 +126,6 @@ main {
   align-items: center;
   text-align: center;
   color: #fff;
-  animation: fadeIn 1.5s ease;
 }
 
 /* Heading */
@@ -190,4 +192,49 @@ footer .icons-line {
   .landingMainContainer p {
     font-size: 1rem;
   }
+}
+
+/* From Uiverse.io by Gaurav-WebDev */ 
+.button {
+  height: 50px;
+  width: 200px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
 }

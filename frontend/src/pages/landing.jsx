@@ -12,7 +12,9 @@ export default function LandingPage() {
     <div className="landingPageContainer">
       <nav className="navbar">
         <div className="navHeader">
-          <h2>Conectify</h2>
+          <Link to="/">
+            <h2>Conectify</h2>
+          </Link>
         </div>
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
@@ -31,7 +33,7 @@ export default function LandingPage() {
 
       {/* main part */}
       <main>
-        <div className="landingMainContainer">
+        <div className="landingMainContainer" data-scroll>
           <h1>Seamless Connections, Infinite Possibilities</h1>
           <p>Host, share, and collaborate in real-time — anytime, anywhere.</p>
           <span>
@@ -41,7 +43,9 @@ export default function LandingPage() {
           </span>
           <div className="buttons-class">
             <Link to="/auth">
-              <button>Get Started</button>
+              <button class="button type1">
+                <span class="btn-txt">Hello</span>
+              </button>
             </Link>
           </div>
         </div>
@@ -50,7 +54,10 @@ export default function LandingPage() {
           <img
             src="/conference_img02.jpg"
             alt="landing_image"
-            className="scroll-img transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 hover:bg-indigo-500 "
+            data-aos="zoom-in"
+            data-aos-duration="2500"
+            data-aos-delay="50"
+            className="scroll-img"
           />
         </div>
       </main>
@@ -84,7 +91,7 @@ export default function LandingPage() {
             </p>
           </Link>
         </div>
-        <div>&copy; Developed by Sarthak 🚀 </div>
+        <div>&copy;Developed by Sarthak </div>
       </footer>
     </div>
   );
