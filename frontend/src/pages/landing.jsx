@@ -31,7 +31,6 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* main part */}
       <main>
         <div className="landingMainContainer" data-scroll>
           <h1>Seamless Connections, Infinite Possibilities</h1>
@@ -41,13 +40,14 @@ export default function LandingPage() {
             reliable video calls designed for work, study, and everyday
             life.&quot;
           </span>
-          <div className="buttons-class">
-            <Link to="/auth">
-              <button class="button type1">
-                <span class="btn-txt">Hello</span>
-              </button>
-            </Link>
-          </div>
+        </div>
+
+        <div className="buttons-class">
+          <Link to="/auth">
+            <button className="btn-shine">
+              <span>Get Started</span>
+            </button>
+          </Link>
         </div>
 
         <div className="image-set pb-5 items-center flex justify-center">
@@ -62,7 +62,7 @@ export default function LandingPage() {
         </div>
       </main>
 
-      <footer className="">
+      <footer className="land-page-footer">
         <div className="icons-line">
           <Link
             to="https://www.linkedin.com/in/sarthak-fullstack-developer/"

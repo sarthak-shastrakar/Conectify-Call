@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 const StyledWrapper = styled.div`
   .wrapper {
     width: 100%;
-    min-height: 100vh;
+    height:100vh;
     display: grid;
     place-content: center;
     background: black;
@@ -160,6 +160,10 @@ const StyledWrapper = styled.div`
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(255, 224, 166, 0.4),
       0 0 20px rgba(255, 224, 166, 0.2);
+
+    @media (max-width: 480px) {
+      font-size: 0.7rem;
+    }
   }
 
   .form-toggle button:hover,
@@ -237,9 +241,31 @@ const StyledWrapper = styled.div`
   }
 
   .back-button {
-    text-align: center;
-    
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4f46e5;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
 
+  .back-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+  }
+  .back-button:hover {
+    color: #4338ca;
+  }
+
+  .back-button:hover .back-icon {
+    transform: translateX(-3px);
+  }
+  .back-button:focus-visible {
+    outline: 2px solid rgba(79, 70, 229, 0.4);
+    outline-offset: 4px;
   }
 `;
 
@@ -306,11 +332,22 @@ export default function Authentication() {
     <StyledWrapper>
       <div className="wrapper">
         <Link to="/" className="back-button">
-          <span>
-            {/* <MoveLeft /> */}
-            back to home
-          </span>
+          <svg
+            className="back-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+          <span>Back to home</span>
         </Link>
+
         <form className="form" onSubmit={(e) => e.preventDefault()}>
           <span className="title">
             {formState === 0 ? "Login" : "Register"}
